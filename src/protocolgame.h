@@ -33,6 +33,7 @@ class Container;
 class Tile;
 class Connection;
 class Quest;
+// class TrackedQuest; // disabled on downgrade
 class ProtocolGame;
 using ProtocolGame_ptr = std::shared_ptr<ProtocolGame>;
 
@@ -123,6 +124,7 @@ class ProtocolGame final : public Protocol
 		void parsePlayerSale(NetworkMessage& msg);
 
 		void parseQuestLine(NetworkMessage& msg);
+		// void parseQuestTracker(NetworkMessage& msg); // disabled on downgrade
 
 		void parseInviteToParty(NetworkMessage& msg);
 		void parseJoinParty(NetworkMessage& msg);
@@ -169,6 +171,8 @@ class ProtocolGame final : public Protocol
 
 		void sendQuestLog();
 		void sendQuestLine(const Quest* quest);
+		// void sendQuestTracker(); // disabled on downgrade
+		// void sendUpdateQuestTracker(const TrackedQuest& trackedQuest); // disabled on downgrade
 
 		void sendCancelWalk();
 		void sendChangeSpeed(const Creature* creature, uint32_t speed);

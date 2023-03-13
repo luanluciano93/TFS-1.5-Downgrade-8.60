@@ -34,12 +34,21 @@ class Mission
 	public:
 		Mission(std::string name, int32_t storageID, int32_t startValue, int32_t endValue, bool ignoreEndValue) :
 			name(std::move(name)), storageID(storageID), startValue(startValue), endValue(endValue), ignoreEndValue(ignoreEndValue) {}
+		/* override disabled on downgrade
+		Mission(std::string name, uint16_t id, int32_t storageID, int32_t startValue, int32_t endValue, bool ignoreEndValue) :
+			name(std::move(name)), storageID(storageID), startValue(startValue), endValue(endValue), ignoreEndValue(ignoreEndValue), id(id) {}
+		*/
 
 		bool isCompleted(Player* player) const;
 		bool isStarted(Player* player) const;
 		std::string getName(Player* player) const;
 		std::string getDescription(Player* player) const;
 
+		/*  disabled on downgrade
+		uint16_t getID() const {
+			return id;
+		}
+		*/
 		uint32_t getStorageId() const {
 			return storageID;
 		}
@@ -58,6 +67,9 @@ class Mission
 		uint32_t storageID;
 		int32_t startValue, endValue;
 		bool ignoreEndValue;
+		// uint16_t id; // disabled on downgrade
+
+		// friend class Quest; // disabled on downgrade
 };
 
 class Quest
@@ -87,6 +99,10 @@ class Quest
 			return missions;
 		}
 
+		// const Mission* getMissionById(uint16_t id) const; // disabled on downgrade
+
+		// bool isTracking(const uint32_t key, const int32_t value) const; // disabled on downgrade
+
 	private:
 		std::string name;
 
@@ -115,5 +131,26 @@ class Quests
 	private:
 		QuestsList quests;
 };
+
+/* disabled on downgrade
+class TrackedQuest
+{
+	public:
+		TrackedQuest(uint16_t questId, uint16_t missionId) :
+			questId(questId), missionId(missionId) {}
+
+		uint16_t getQuestId() const {
+			return questId;
+		}
+
+		uint16_t getMissionId() const {
+			return missionId;
+		}
+
+	private:
+		uint16_t questId = 0;
+		uint16_t missionId = 0;
+};
+*/
 
 #endif

@@ -643,6 +643,12 @@ class Player final : public Creature, public Cylinder
 		size_t getMaxVIPEntries() const;
 		size_t getMaxDepotItems() const;
 
+		/* disabled on downgrade
+		//quest tracker
+		size_t getMaxTrackedQuests() const;
+		void resetQuestTracker(const std::vector<uint16_t>& missionIds);
+		*/
+
 		//tile
 		//send methods
 		void sendAddTileItem(const Tile* tile, const Position& pos, const Item* item) {
@@ -978,6 +984,18 @@ class Player final : public Creature, public Cylinder
 				client->sendQuestLine(quest);
 			}
 		}
+		/* disabled on downgrade
+		void sendQuestTracker() {
+			if (client) {
+				client->sendQuestTracker();
+			}
+		}
+		void sendUpdateQuestTracker(const TrackedQuest& trackedQuest) {
+			if (client) {
+				client->sendUpdateQuestTracker(trackedQuest);
+			}
+		}
+		*/
 		void sendFightModes() {
 			if (client) {
 				client->sendFightModes();
@@ -1083,6 +1101,11 @@ class Player final : public Creature, public Cylinder
 		std::forward_list<Party*> invitePartyList;
 		std::forward_list<std::string> learnedInstantSpellList;
 		std::forward_list<Condition*> storedConditionList; // TODO: This variable is only temporarily used when logging in, get rid of it somehow
+
+		/* disabled on downgrade
+		//quest tracker
+		std::vector<TrackedQuest> trackedQuests;
+		*/
 
 		std::string name;
 		std::string guildNick;

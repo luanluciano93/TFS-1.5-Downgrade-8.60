@@ -134,6 +134,10 @@ class ConfigManager
 			VIP_PREMIUM_LIMIT,
 			DEPOT_FREE_LIMIT,
 			DEPOT_PREMIUM_LIMIT,
+			/* disabled on downgrade
+			QUEST_TRACKER_FREE_LIMIT,
+			QUEST_TRACKER_PREMIUM_LIMIT,
+			*/
 
 			LAST_INTEGER_CONFIG /* this must be the last one */
 		};
