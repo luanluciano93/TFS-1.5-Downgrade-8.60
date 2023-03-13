@@ -14,3 +14,4 @@ Commits adicionados do TFS após o fork Nekiro:
 - Magicwall shouldn't disappear on forced step-in (#3836) [Jan 26, 2022]: https://github.com/otland/forgottenserver/commit/e14ab10a971ea8dacc681cda6367c4ca9c1b9178
 
 Outros commits adicionados:
+- [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
