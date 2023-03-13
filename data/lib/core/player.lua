@@ -312,3 +312,7 @@ function Player.getWeaponType(self)
 	end
 	return WEAPON_NONE
 end
+
+function Player.getTotalMoney(self)
+	return self:getMoney() + self:getBankBalance()
+end
