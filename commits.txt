@@ -1,1 +1,3 @@
 Commits adicionados após o fork Nekiro:
+
+- Added Game.getOutfits(playerSex) and Game.getMounts() (#3868) [Dec 22, 2021]: https://github.com/otland/forgottenserver/commit/4bdc9880c1402104d19f923976d067d124c05a56
