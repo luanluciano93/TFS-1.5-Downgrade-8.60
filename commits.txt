@@ -10,3 +10,4 @@ Commits adicionados após o fork Nekiro:
 - Small update to channel requirements (#3859) [Jan 23, 2022]: https://github.com/otland/forgottenserver/commit/f7db9bc8fa11eeeed2e16e28339b7dc17f3255fc
 - Move notify depot-box range to constexpr (#3722) [Jan 23, 2022]: https://github.com/otland/forgottenserver/commit/2af38dcc794809e504b2bef07805354bd2adedd1
 - Avoid search for C compiler (#3907) [Jan 25, 2022]: https://github.com/otland/forgottenserver/commit/1a6f78644a93f1af9ce94cb7a1d944ca84631598
+- Added Player.addAllMounts and Player.addAllAddons (#3893) [Jan 25, 2022]: https://github.com/otland/forgottenserver/commit/d4a0aeef3bbca9ecf658ea50c55959ada6831ee3

@@ -649,6 +649,7 @@ function doPlayerRemOutfit(cid, lookType, addons)
 	end
 end
 doPlayerRemoveOutfit = doPlayerRemOutfit
+function doPlayerAddAddons(cid, addon) local p = Player(cid) return p and p:addAddonToAllOutfits(addon) or false end
 function canPlayerWearOutfit(cid, lookType, addons) local p = Player(cid) return p and p:hasOutfit(lookType, addons) or false end
 function doPlayerSendOutfitWindow(cid) local p = Player(cid) return p and p:sendOutfitWindow() or false end
 function doPlayerSendCancel(cid, text) local p = Player(cid) return p and p:sendCancelMessage(text) or false end
