@@ -1,4 +1,4 @@
-Commits adicionados após o fork Nekiro:
+Commits adicionados do TFS após o fork Nekiro:
 
 - Added Game.getOutfits(playerSex) and Game.getMounts() (#3868) [Dec 22, 2021]: https://github.com/otland/forgottenserver/commit/4bdc9880c1402104d19f923976d067d124c05a56
 - Quest Tracker feature (#3845) [Dec 23, 2021]: https://github.com/otland/forgottenserver/commit/c21916dd65feae525e4a30728e1cef6fe6b9542f
@@ -11,3 +11,4 @@ Commits adicionados após o fork Nekiro:
 - Move notify depot-box range to constexpr (#3722) [Jan 23, 2022]: https://github.com/otland/forgottenserver/commit/2af38dcc794809e504b2bef07805354bd2adedd1
 - Avoid search for C compiler (#3907) [Jan 25, 2022]: https://github.com/otland/forgottenserver/commit/1a6f78644a93f1af9ce94cb7a1d944ca84631598
 - Added Player.addAllMounts and Player.addAllAddons (#3893) [Jan 25, 2022]: https://github.com/otland/forgottenserver/commit/d4a0aeef3bbca9ecf658ea50c55959ada6831ee3
+- Magicwall shouldn't disappear on forced step-in (#3836) [Jan 26, 2022]: https://github.com/otland/forgottenserver/commit/e14ab10a971ea8dacc681cda6367c4ca9c1b9178

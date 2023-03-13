@@ -1473,6 +1473,25 @@ void AreaCombat::setupExtArea(const std::vector<uint32_t>& vec, uint32_t rows)
 
 void MagicField::onStepInField(Creature* creature)
 {
+	/* disabled on downgrade
+	//remove magic walls/wild growth
+	if (id == ITEM_MAGICWALL_SAFE || id == ITEM_WILDGROWTH_SAFE || isBlocking()) {
+		if (!creature->isInGhostMode()) {
+			g_game.internalRemoveItem(this, 1);
+		}
+
+		return;
+	}
+
+	//remove magic walls/wild growth (only nopvp tiles/world)
+	if (id == ITEM_MAGICWALL_NOPVP || id == ITEM_WILDGROWTH_NOPVP) {
+		if (g_game.getWorldType() == WORLD_TYPE_NO_PVP || getTile()->hasFlag(TILESTATE_NOPVPZONE)) {
+			g_game.internalRemoveItem(this, 1);
+		}
+		return;
+	}
+	*/
+
 	const ItemType& it = items[getID()];
 	if (it.conditionDamage) {
 		Condition* conditionCopy = it.conditionDamage->clone();
