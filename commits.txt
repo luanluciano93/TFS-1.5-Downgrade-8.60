@@ -12,3 +12,5 @@ Commits adicionados do TFS após o fork Nekiro:
 - Avoid search for C compiler (#3907) [Jan 25, 2022]: https://github.com/otland/forgottenserver/commit/1a6f78644a93f1af9ce94cb7a1d944ca84631598
 - Added Player.addAllMounts and Player.addAllAddons (#3893) [Jan 25, 2022]: https://github.com/otland/forgottenserver/commit/d4a0aeef3bbca9ecf658ea50c55959ada6831ee3
 - Magicwall shouldn't disappear on forced step-in (#3836) [Jan 26, 2022]: https://github.com/otland/forgottenserver/commit/e14ab10a971ea8dacc681cda6367c4ca9c1b9178
+
+Outros commits adicionados:

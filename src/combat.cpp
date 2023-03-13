@@ -1479,7 +1479,6 @@ void MagicField::onStepInField(Creature* creature)
 		if (!creature->isInGhostMode()) {
 			g_game.internalRemoveItem(this, 1);
 		}
-
 		return;
 	}
 
@@ -1491,6 +1490,16 @@ void MagicField::onStepInField(Creature* creature)
 		return;
 	}
 	*/
+
+	// start - add by luanluciano
+	//remove magic walls/wild growth
+	if (id == ITEM_MAGICWALL || id == ITEM_WILDGROWTH || id == ITEM_MAGICWALL_SAFE || id == ITEM_WILDGROWTH_SAFE || isBlocking()) {
+		if (!creature->isInGhostMode()) {
+			g_game.internalRemoveItem(this, 1);
+		}
+		return;
+	}
+	// end - add by luanluciano
 
 	const ItemType& it = items[getID()];
 	if (it.conditionDamage) {
