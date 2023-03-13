@@ -7,3 +7,4 @@ Commits adicionados após o fork Nekiro:
 - Fix respawn taking twice as long as expected (#3886) [Jan 6, 2022]: https://github.com/otland/forgottenserver/commit/797ebb19217cbed443294b49c116278afbf07792
 - Fixing mistake when removing charm item (#3891) [Jan 9, 2022]: https://github.com/otland/forgottenserver/commit/5b7cfb9749a1caee17d91fa00cb3695433fc1ece
 - Fixed double declared variable at bank NPC (#3897) [Jan 16, 2022]: https://github.com/otland/forgottenserver/commit/5df0c3f2e46cb62bd56959a9ff6c9ae0b98a2fdb
+- Small update to channel requirements (#3859) [Jan 23, 2022]: https://github.com/otland/forgottenserver/commit/f7db9bc8fa11eeeed2e16e28339b7dc17f3255fc
