@@ -3,3 +3,4 @@ Commits adicionados após o fork Nekiro:
 - Added Game.getOutfits(playerSex) and Game.getMounts() (#3868) [Dec 22, 2021]: https://github.com/otland/forgottenserver/commit/4bdc9880c1402104d19f923976d067d124c05a56
 - Quest Tracker feature (#3845) [Dec 23, 2021]: https://github.com/otland/forgottenserver/commit/c21916dd65feae525e4a30728e1cef6fe6b9542f
 - moved Player:getTotalMoney() to more accessible place (#3875) [Dec 27, 2021]: https://github.com/otland/forgottenserver/commit/6eb8051866ae7e743180eaaaee7048125080d42b
+- Add summon max count in MonsterType:addSummon (#3883) [Jan 5, 2022]: https://github.com/otland/forgottenserver/commit/215713d6916044ec277517c22189c9485236e1a2
