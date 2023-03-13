@@ -6,3 +6,4 @@ Commits adicionados após o fork Nekiro:
 - Add summon max count in MonsterType:addSummon (#3883) [Jan 5, 2022]: https://github.com/otland/forgottenserver/commit/215713d6916044ec277517c22189c9485236e1a2
 - Fix respawn taking twice as long as expected (#3886) [Jan 6, 2022]: https://github.com/otland/forgottenserver/commit/797ebb19217cbed443294b49c116278afbf07792
 - Fixing mistake when removing charm item (#3891) [Jan 9, 2022]: https://github.com/otland/forgottenserver/commit/5b7cfb9749a1caee17d91fa00cb3695433fc1ece
+- Fixed double declared variable at bank NPC (#3897) [Jan 16, 2022]: https://github.com/otland/forgottenserver/commit/5df0c3f2e46cb62bd56959a9ff6c9ae0b98a2fdb
