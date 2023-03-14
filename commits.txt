@@ -14,6 +14,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Magicwall shouldn't disappear on forced step-in (#3836) [Jan 26, 2022]: https://github.com/otland/forgottenserver/commit/e14ab10a971ea8dacc681cda6367c4ca9c1b9178
 - Fix incorrect argument to Player:onItemMoved event (#3913) [Jan 27, 2022]: https://github.com/otland/forgottenserver/commit/0a28db66fc5d806f15c75bc2a6e0e38874de87d2
 - Fix containers not decaying in houses after server startup (#3911) [Jan 27, 2022]: https://github.com/otland/forgottenserver/commit/99469a3f89c3236138e525de5e7f75198b12f1c7
+- FIX: Item::equals issue with custom attributes (#3803) [Jan 27, 2022]: https://github.com/otland/forgottenserver/commit/79df545ff3db5d7bdac704c305479c495af3ee77
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
