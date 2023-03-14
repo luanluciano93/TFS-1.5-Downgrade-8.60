@@ -20,6 +20,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Fix OnItemMoved event when the last item of a stackable stack is moved into another stack (#3918) [Jan 31, 2022]: https://github.com/otland/forgottenserver/commit/b23850046a2aec05636761c49d296c755865288a
 - Fix coding style in Player.updateKillTracker (#3919) [Feb 2, 2022]: https://github.com/otland/forgottenserver/commit/b1b420f400eddb4f14a4369d516bd11d0a543511
 - Adding new item attributes (#2807) [Feb 3, 2022]: https://github.com/otland/forgottenserver/commit/a14f1fbd46318751ea9557a50d8d87a90f2bf518
+- prevent ATTR conflict with OTBM (#3921) [Feb 4, 2022]: https://github.com/otland/forgottenserver/commit/7e93892556c6a9874a4cf3b608b21f26531f74e1
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
