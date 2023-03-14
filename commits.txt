@@ -18,6 +18,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Fix unused function warning on Linux (#3908) [Jan 28, 2022]: https://github.com/otland/forgottenserver/commit/2e37a41518773d11f65c0f28b65aa83b039eb0e0
 - Fixes to MoveItem & OnItemMoved events (#3916) [Jan 30, 2022]: https://github.com/otland/forgottenserver/commit/959c0bb4e0095c675f445da2d28cd69f70be143d
 - Fix OnItemMoved event when the last item of a stackable stack is moved into another stack (#3918) [Jan 31, 2022]: https://github.com/otland/forgottenserver/commit/b23850046a2aec05636761c49d296c755865288a
+- Fix coding style in Player.updateKillTracker (#3919) [Feb 2, 2022]: https://github.com/otland/forgottenserver/commit/b1b420f400eddb4f14a4369d516bd11d0a543511
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
