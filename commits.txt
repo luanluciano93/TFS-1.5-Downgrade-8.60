@@ -32,6 +32,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - [Place Creature] Make it possible to set your desired effect (#3914) [Feb 7, 2022]: https://github.com/otland/forgottenserver/commit/76d4aa55db927f53589e52156b3bf7e122425833
 - fix update magic level percentage after spending mana (#3930) [Feb 9, 2022]: https://github.com/otland/forgottenserver/commit/a1a3c4bf58a88f7ca2221761a6080d85e76a2acb
 - Fix missing green skull on current character (#3931) [Feb 10, 2022]: https://github.com/otland/forgottenserver/commit/d24eb1c9c635198361ef758ed33cc4836db35dd3
+- more detailed shared exp messages (#3934) [Feb 13, 2022]: https://github.com/otland/forgottenserver/commit/9c41cc115d824f7d0567f20097241010861d575e
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
