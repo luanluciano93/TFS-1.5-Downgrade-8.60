@@ -29,6 +29,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - getNumber: check unsigned integers for underflow and overflow (#3197) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/04d687abf42c26e3f9ac5335d3b4934001181bdc
 - Fixed bug in #3197 (#3926) (#3197) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/e1b2ac2e794e29608f4849594f4aa3ac0328fc54
 - Check if item has been removed before firing OnItemMoved events (#3925) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/e991b15c2319e6cfbe9d963e4e285591a0283b20
+- [Place Creature] Make it possible to set your desired effect (#3914) [Feb 7, 2022]: https://github.com/otland/forgottenserver/commit/76d4aa55db927f53589e52156b3bf7e122425833
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
