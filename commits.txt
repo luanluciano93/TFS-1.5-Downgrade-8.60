@@ -38,6 +38,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - build: Update alpine to 3.15 (#3937) [Feb 14, 2022]: https://github.com/otland/forgottenserver/commit/046bfb038ba2440eb81e2689bc9fe0421f2c6074
 - More party fixes (#3938) [Feb 14, 2022]: https://github.com/otland/forgottenserver/commit/efda5d9cdd2f9a4b269c096bd62662f4af0c6e35
 - Update default_onDropLoot.lua (#3941) [Feb 15, 2022]: https://github.com/otland/forgottenserver/commit/b61accf1293f550025f72a61c15002a6b68adc80
+- Fix magic level update after wearing items (#3945) [Feb 15, 2022]: https://github.com/otland/forgottenserver/commit/7753f4112002ec0fa6c53d0fd77f0224706b0118
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
