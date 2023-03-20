@@ -25,6 +25,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Fix certain scenarios where the house protection would fail to apply (#3904) [Feb 5, 2022]: https://github.com/otland/forgottenserver/commit/99a26db7207a9e94099866678ae8457124139250
 - Add Player:getIdleTime and Player:isNearDepotBox Lua functions (#3912) [Feb 5, 2022]: https://github.com/otland/forgottenserver/commit/60fe34939901c12ad22773b7e405e1be78490c9e
 - Dont hardcode size for depot locker (#3924) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/772f7daa5ab9c360b9952117d1ec0dbc8b2d76f3
+- Say without echo in onHear event (#3031) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/22a901adec21e47fa2b881bcaba574563ea743ae
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
