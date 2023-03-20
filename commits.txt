@@ -27,6 +27,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Dont hardcode size for depot locker (#3924) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/772f7daa5ab9c360b9952117d1ec0dbc8b2d76f3
 - Say without echo in onHear event (#3031) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/22a901adec21e47fa2b881bcaba574563ea743ae
 - getNumber: check unsigned integers for underflow and overflow (#3197) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/04d687abf42c26e3f9ac5335d3b4934001181bdc
+- Fixed bug in #3197 (#3926) (#3197) [Feb 6, 2022]: https://github.com/otland/forgottenserver/commit/e1b2ac2e794e29608f4849594f4aa3ac0328fc54
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
