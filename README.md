@@ -3,7 +3,7 @@
 Este downgrade não é uma distribuição de download e execução, monstros e feitiços provavelmente não estão 100% corretos.
 No entanto, você pode enviar uma solicitação pull.
 
-Este downgrade é até: Feb 13, 2022 - https://github.com/otland/forgottenserver/commit/ce08b285251256ac7d35d58249db19580be51057
+Este downgrade é até: Feb 14, 2022 - https://github.com/otland/forgottenserver/commit/046bfb038ba2440eb81e2689bc9fe0421f2c6074
 
 ## Como Compilar:
 
