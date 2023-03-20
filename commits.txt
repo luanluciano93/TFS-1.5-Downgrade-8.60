@@ -23,6 +23,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - prevent ATTR conflict with OTBM (#3921) [Feb 4, 2022]: https://github.com/otland/forgottenserver/commit/7e93892556c6a9874a4cf3b608b21f26531f74e1
 - Fix whereever slot bugs (#3923) [Feb 4, 2022]: https://github.com/otland/forgottenserver/commit/c82fee3ea4a4ea7fb2fb6b0f63e0582d73a720db
 - Fix certain scenarios where the house protection would fail to apply (#3904) [Feb 5, 2022]: https://github.com/otland/forgottenserver/commit/99a26db7207a9e94099866678ae8457124139250
+- Add Player:getIdleTime and Player:isNearDepotBox Lua functions (#3912) [Feb 5, 2022]: https://github.com/otland/forgottenserver/commit/60fe34939901c12ad22773b7e405e1be78490c9e
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4

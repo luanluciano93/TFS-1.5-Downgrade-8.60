@@ -850,7 +850,7 @@ Thing* LuaScriptInterface::getThing(lua_State* L, int32_t arg)
 	Thing* thing;
 	if (lua_getmetatable(L, arg) != 0) {
 		lua_rawgeti(L, -1, 't');
-		switch(getNumber<uint32_t>(L, -1)) {
+		switch (getNumber<uint32_t>(L, -1)) {
 			case LuaData_Item:
 				thing = getUserdata<Item>(L, arg);
 				break;
@@ -979,7 +979,7 @@ void LuaScriptInterface::pushOutfit(lua_State* L, const Outfit* outfit)
 	setMetatable(L, -1, "Outfit");
 }
 
-/* disabled on downgrade 860
+/* disabled on downgrade
 void LuaScriptInterface::pushMount(lua_State* L, const Mount* mount)
 {
 	lua_createtable(L, 0, 5);
@@ -1060,7 +1060,7 @@ void LuaScriptInterface::registerFunctions()
 	// getSubTypeName(subType)
 	lua_register(luaState, "getSubTypeName", LuaScriptInterface::luaGetSubTypeName);
 
-	//createCombatArea( {area}, <optional> {extArea} )
+	//createCombatArea({area}, <optional> {extArea})
 	lua_register(luaState, "createCombatArea", LuaScriptInterface::luaCreateCombatArea);
 
 	//doAreaCombat(cid, type, pos, area, min, max, effect[, origin = ORIGIN_SPELL[, blockArmor = false[, blockShield = false[, ignoreResistances = false]]]])
@@ -2492,6 +2492,10 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "hasChaseMode", LuaScriptInterface::luaPlayerHasChaseMode);
 	registerMethod("Player", "hasSecureMode", LuaScriptInterface::luaPlayerHasSecureMode);
 	registerMethod("Player", "getFightMode", LuaScriptInterface::luaPlayerGetFightMode);
+
+	registerMethod("Player", "isNearDepotBox", LuaScriptInterface::luaPlayerIsNearDepotBox);
+
+	registerMethod("Player", "getIdleTime", LuaScriptInterface::luaPlayerGetIdleTime);
 
 	// Monster
 	registerClass("Monster", "Creature", LuaScriptInterface::luaMonsterCreate);
@@ -9946,6 +9950,32 @@ int LuaScriptInterface::luaPlayerGetFightMode(lua_State* L)
 	} else {
 		lua_pushnil(L);
 	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerIsNearDepotBox(lua_State* L)
+{
+	// player:isNearDepotBox()
+	const Player* const player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	pushBoolean(L, player->isNearDepotBox());
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerGetIdleTime(lua_State* L)
+{
+	// player:getIdleTime()
+	const Player* const player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	lua_pushnumber(L, player->getIdleTime());
 	return 1;
 }
 
