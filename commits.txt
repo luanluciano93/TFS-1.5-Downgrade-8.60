@@ -36,7 +36,8 @@ Commits adicionados do TFS após o fork Nekiro:
 - Fix Lua getNumber range check (#3928) [Feb 13, 2022]: https://github.com/otland/forgottenserver/commit/3d58451abb00f9712f37008383255600e14f7bc9
 - Fix trade stacking items (#3248) [Feb 13, 2022]: https://github.com/otland/forgottenserver/commit/ce08b285251256ac7d35d58249db19580be51057
 - build: Update alpine to 3.15 (#3937) [Feb 14, 2022]: https://github.com/otland/forgottenserver/commit/046bfb038ba2440eb81e2689bc9fe0421f2c6074
-- More party fixes (#3938) (#3937) [Feb 14, 2022]: https://github.com/otland/forgottenserver/commit/efda5d9cdd2f9a4b269c096bd62662f4af0c6e35
+- More party fixes (#3938) [Feb 14, 2022]: https://github.com/otland/forgottenserver/commit/efda5d9cdd2f9a4b269c096bd62662f4af0c6e35
+- Update default_onDropLoot.lua (#3941) [Feb 15, 2022]: https://github.com/otland/forgottenserver/commit/b61accf1293f550025f72a61c15002a6b68adc80
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
