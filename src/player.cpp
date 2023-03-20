@@ -1569,6 +1569,7 @@ void Player::addManaSpent(uint64_t amount)
 
 	if (sendUpdateStats) {
 		sendStats();
+		sendSkills();
 	}
 }
 
@@ -1605,6 +1606,7 @@ void Player::removeManaSpent(uint64_t amount, bool notify/* = false*/)
 
 		if (sendUpdateStats || oldPercent != magLevelPercent) {
 			sendStats();
+			sendSkills();
 		}
 	}
 }
