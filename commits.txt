@@ -43,6 +43,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - rsa: tolerate whitespaces better (#3940) [Feb 16, 2022]: https://github.com/otland/forgottenserver/commit/474b959f8bae491afe10d2e7fa4919722e594ce3
 - Merge ioguild into guild (#3949) [Feb 17, 2022]: https://github.com/otland/forgottenserver/commit/7e35e179e809615b8d777dabbf6c678c52709b4e
 - Added missing getStatName function (#3953) [Feb 17, 2022]: https://github.com/otland/forgottenserver/commit/3f489de72c1f0fe2a41add064be0520fbda1b789
+- Add Player:onInventoryUpdate(item, slot, equip) (#3944) [Feb 17, 2022]: https://github.com/otland/forgottenserver/commit/15d3e5478d5b27d70e0609c5b0d11ee2b2d6a1cf
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
