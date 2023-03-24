@@ -837,6 +837,7 @@ InstantSpell* LuaScriptInterface::getInstantSpell(lua_State* L, int32_t arg)
 	return spell;
 }
 
+/* disabled on downgrade
 Reflect LuaScriptInterface::getReflect(lua_State* L, int32_t arg)
 {
 	uint16_t percent = getField<uint16_t>(L, arg, "percent");
@@ -844,6 +845,7 @@ Reflect LuaScriptInterface::getReflect(lua_State* L, int32_t arg)
 	lua_pop(L, 2);
 	return Reflect(percent, value);
 }
+*/
 
 Thing* LuaScriptInterface::getThing(lua_State* L, int32_t arg)
 {
@@ -1013,12 +1015,14 @@ void LuaScriptInterface::pushLoot(lua_State* L, const std::vector<LootBlock>& lo
 	}
 }
 
+/* disabled on downgrade
 void LuaScriptInterface::pushReflect(lua_State* L, const Reflect& reflect)
 {
 	lua_createtable(L, 0, 2);
 	setField(L, "percent", reflect.percent);
 	setField(L, "chance", reflect.chance);
 }
+*/
 
 #define registerEnum(value) { std::string enumName = #value; registerGlobalVariable(enumName.substr(enumName.find_last_of(':') + 1), value); }
 #define registerEnumIn(tableName, value) { std::string enumName = #value; registerVariable(tableName, enumName.substr(enumName.find_last_of(':') + 1), value); }
@@ -2222,11 +2226,13 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Item", "hasProperty", LuaScriptInterface::luaItemHasProperty);
 	registerMethod("Item", "isLoadedFromMap", LuaScriptInterface::luaItemIsLoadedFromMap);
 
+	/* disabled on downgrade
 	registerMethod("Item", "setReflect", LuaScriptInterface::luaItemSetReflect);
 	registerMethod("Item", "getReflect", LuaScriptInterface::luaItemGetReflect);
 
 	registerMethod("Item", "setBoostPercent", LuaScriptInterface::luaItemSetBoostPercent);
 	registerMethod("Item", "getBoostPercent", LuaScriptInterface::luaItemGetBoostPercent);
+	*/
 
 	// Container
 	registerClass("Container", "Item", LuaScriptInterface::luaContainerCreate);
@@ -6673,6 +6679,7 @@ int LuaScriptInterface::luaItemIsLoadedFromMap(lua_State* L)
 	return 1;
 }
 
+/* luaItemSetReflect
 int LuaScriptInterface::luaItemSetReflect(lua_State* L)
 {
 	// item:setReflect(combatType, reflect)
@@ -6724,6 +6731,7 @@ int LuaScriptInterface::luaItemGetBoostPercent(lua_State* L)
 	}
 	return 1;
 }
+*/
 
 // Container
 int LuaScriptInterface::luaContainerCreate(lua_State* L)

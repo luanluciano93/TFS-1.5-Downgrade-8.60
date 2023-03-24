@@ -573,7 +573,7 @@ enum CombatOrigin
 	ORIGIN_MELEE,
 	ORIGIN_RANGED,
 	ORIGIN_WAND,
-	ORIGIN_REFLECT,
+	// ORIGIN_REFLECT, // disabled on downgrade
 };
 
 struct CombatDamage
@@ -600,6 +600,7 @@ enum MonstersEvent_t : uint8_t {
 	MONSTERS_EVENT_SAY = 5,
 };
 
+/* disabled on downgrade
 struct Reflect {
 	Reflect() = default;
 	Reflect(uint16_t percent, uint16_t chance) : percent(percent), chance(chance) {};
@@ -613,5 +614,6 @@ struct Reflect {
 	uint16_t percent = 0;
 	uint16_t chance = 0;
 };
+*/
 
 #endif

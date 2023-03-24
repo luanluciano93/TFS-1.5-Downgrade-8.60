@@ -1865,10 +1865,13 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 	}
 
 	if (!ignoreResistances) {
+		/* change on downgrade
 		Reflect reflect;
 
 		size_t combatIndex = combatTypeToIndex(combatType);
 		for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_LAST; ++slot) {
+		*/
+		for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_AMMO; ++slot) {
 			if (!isItemAbilityEnabled(static_cast<slots_t>(slot))) {
 				continue;
 			}
@@ -1888,7 +1891,8 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 				continue;
 			}
 
-			const int16_t& absorbPercent = it.abilities->absorbPercent[combatIndex];
+			// const int16_t& absorbPercent = it.abilities->absorbPercent[combatIndex]; // change on downgrade
+			const int16_t& absorbPercent = it.abilities->absorbPercent[combatTypeToIndex(combatType)];
 			if (absorbPercent != 0) {
 				damage -= std::round(damage * (absorbPercent / 100.));
 
@@ -1898,10 +1902,11 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 				}
 			}
 
-			reflect += item->getReflect(combatType);
+			// reflect += item->getReflect(combatType); // disabled on downgrade
 
 			if (field) {
-				const int16_t& fieldAbsorbPercent = it.abilities->fieldAbsorbPercent[combatIndex];
+				// const int16_t& fieldAbsorbPercent = it.abilities->fieldAbsorbPercent[combatIndex]; // change on downgrade
+				const int16_t& fieldAbsorbPercent = it.abilities->fieldAbsorbPercent[combatTypeToIndex(combatType)];
 				if (fieldAbsorbPercent != 0) {
 					damage -= std::round(damage * (fieldAbsorbPercent / 100.));
 
@@ -1913,6 +1918,7 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 			}
 		}
 
+		/* disabled on downgrade
 		if (attacker && reflect.chance > 0 && reflect.percent != 0 && uniform_random(1, 100) <= reflect.chance) {
 			CombatDamage reflectDamage;
 			reflectDamage.primary.type = combatType;
@@ -1920,6 +1926,7 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 			reflectDamage.origin = ORIGIN_REFLECT;
 			g_game.combatChangeHealth(this, attacker, reflectDamage);
 		}
+		*/
 	}
 
 	if (damage <= 0) {

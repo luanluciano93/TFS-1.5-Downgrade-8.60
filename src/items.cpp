@@ -123,6 +123,7 @@ const std::unordered_map<std::string, ItemParseAttributes_t> ItemParseAttributes
 	{"absorbpercentphysical", ITEM_PARSE_ABSORBPERCENTPHYSICAL},
 	{"absorbpercenthealing", ITEM_PARSE_ABSORBPERCENTHEALING},
 	{"absorbpercentundefined", ITEM_PARSE_ABSORBPERCENTUNDEFINED},
+	/* disabled on downgrade
 	{"reflectpercentall", ITEM_PARSE_REFLECTPERCENTALL},
 	{"reflectpercentallelements", ITEM_PARSE_REFLECTPERCENTALL},
 	{"reflectpercentelements", ITEM_PARSE_REFLECTPERCENTELEMENTS},
@@ -171,6 +172,7 @@ const std::unordered_map<std::string, ItemParseAttributes_t> ItemParseAttributes
 	{"boostpercentdrown", ITEM_PARSE_BOOSTPERCENTDROWN},
 	{"boostpercentphysical", ITEM_PARSE_BOOSTPERCENTPHYSICAL},
 	{"boostpercenthealing", ITEM_PARSE_BOOSTPERCENTHEALING},
+	*/
 	{"suppressdrunk", ITEM_PARSE_SUPPRESSDRUNK},
 	{"suppressenergy", ITEM_PARSE_SUPPRESSENERGY},
 	{"suppressfire", ITEM_PARSE_SUPPRESSFIRE},
@@ -1168,6 +1170,7 @@ void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 					break;
 				}
 
+				/* disabled on downgrade
 				case ITEM_PARSE_REFLECTPERCENTALL: {
 					int16_t value = pugi::cast<int16_t>(valueAttribute.value());
 					for (auto& i : abilities.reflect) {
@@ -1416,6 +1419,7 @@ void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 					abilities.boostPercent[combatTypeToIndex(COMBAT_HEALING)] += pugi::cast<int16_t>(valueAttribute.value());
 					break;
 				}
+				*/
 
 				case ITEM_PARSE_SUPPRESSDRUNK: {
 					if (valueAttribute.as_bool()) {

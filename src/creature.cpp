@@ -881,6 +881,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		}
 	}
 
+	/* disabled on downgrade
 	if (Player* attackerPlayer = attacker->getPlayer()) {
 		for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_LAST; ++slot) {
 			if (!attackerPlayer->isItemAbilityEnabled(static_cast<slots_t>(slot))) {
@@ -903,6 +904,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		damage = 0;
 		blockType = BLOCK_ARMOR;
 	}
+	*/
 
 	if (attacker) {
 		attacker->onAttackedCreature(this);

@@ -172,6 +172,7 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_ALLOWDISTREAD,
 	ITEM_PARSE_STOREITEM,
 	ITEM_PARSE_WORTH,
+	/* disabled on downgrade
 	ITEM_PARSE_REFLECTPERCENTALL,
 	ITEM_PARSE_REFLECTPERCENTELEMENTS,
 	ITEM_PARSE_REFLECTPERCENTMAGIC,
@@ -214,6 +215,7 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_BOOSTPERCENTDROWN,
 	ITEM_PARSE_BOOSTPERCENTPHYSICAL,
 	ITEM_PARSE_BOOSTPERCENTHEALING,
+	*/
 };
 
 struct Abilities {
@@ -241,9 +243,11 @@ struct Abilities {
 	//damage abilities modifiers
 	std::array<int16_t, COMBAT_COUNT> absorbPercent = {0};
 
+	/* disabled on downgrade
 	std::array<Reflect, COMBAT_COUNT> reflect;
 
 	int16_t boostPercent[COMBAT_COUNT] = {0};
+	*/
 
 	//elemental damage
 	uint16_t elementDamage = 0;

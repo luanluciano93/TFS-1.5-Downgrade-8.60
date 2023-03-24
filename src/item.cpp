@@ -600,6 +600,7 @@ Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 			break;
 		}
 
+		/* disabled on downgrade
 		case ATTR_REFLECT: {
 			uint16_t size;
 			if (!propStream.read<uint16_t>(size)) {
@@ -635,6 +636,7 @@ Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 				getAttributes()->boostPercent[combatType] = percent;
 			}
 		}
+		*/
 
 		//these should be handled through derived classes
 		//If these are called then something has changed in the items.xml since the map was saved
@@ -864,6 +866,7 @@ void Item::serializeAttr(PropWriteStream& propWriteStream) const
 		}
 	}
 
+	/* disabled on downgrade
 	if (attributes) {
 		const auto& reflects = attributes->reflect;
 		if (!reflects.empty()) {
@@ -888,6 +891,7 @@ void Item::serializeAttr(PropWriteStream& propWriteStream) const
 			}
 		}
 	}
+	*/
 }
 
 bool Item::hasProperty(ITEMPROPERTY prop) const
@@ -1196,6 +1200,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 				s << "protection all fields " << std::showpos << show << std::noshowpos << '%';
 			}
 
+			/* disabled on downgrade
 			int16_t modifier = item ? item->getReflect(COMBAT_NONE).percent : it.abilities->reflect[0].percent;
 			show = modifier;
 			if (show != 0) {
@@ -1341,6 +1346,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 
 				s << "boost all " << std::showpos << show << std::noshowpos << '%';
 			}
+			*/
 
 			if (it.abilities->speed) {
 				if (begin) {
@@ -1484,6 +1490,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 				s << "protection all fields " << std::showpos << show << std::noshowpos << '%';
 			}
 
+			/* disabled on downgrade
 			int16_t modifier = item ? item->getReflect(COMBAT_NONE).percent : it.abilities->reflect[0].percent;
 			show = modifier;
 			if (show != 0) {
@@ -1629,6 +1636,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 
 				s << "boost all " << std::showpos << show << std::noshowpos << '%';
 			}
+			*/
 
 			if (it.abilities->speed) {
 				if (begin) {
@@ -1979,7 +1987,8 @@ LightInfo Item::getLightInfo() const
 	return {it.lightLevel, it.lightColor};
 }
 
-Reflect Item::getReflect(CombatType_t combatType, bool total /* = true */) const
+/* disabled on downgrade
+Reflect Item::getReflect(CombatType_t combatType, bool total /* = true *//*) const
 {
 	const ItemType& it = Item::items[id];
 
@@ -1995,7 +2004,7 @@ Reflect Item::getReflect(CombatType_t combatType, bool total /* = true */) const
 	return reflect;
 }
 
-uint16_t Item::getBoostPercent(CombatType_t combatType, bool total /* = true */) const
+uint16_t Item::getBoostPercent(CombatType_t combatType, bool total /* = true *//*) const
 {
 	const ItemType& it = Item::items[id];
 
@@ -2010,12 +2019,13 @@ uint16_t Item::getBoostPercent(CombatType_t combatType, bool total /* = true */)
 
 	return boostPercent;
 }
+*/
 
 std::string ItemAttributes::emptyString;
 int64_t ItemAttributes::emptyInt;
 double ItemAttributes::emptyDouble;
 bool ItemAttributes::emptyBool;
-Reflect ItemAttributes::emptyReflect;
+// Reflect ItemAttributes::emptyReflect; // disabled on downgrade
 
 const std::string& ItemAttributes::getStrAttr(itemAttrTypes type) const
 {
