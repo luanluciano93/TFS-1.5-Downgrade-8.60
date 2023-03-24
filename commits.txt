@@ -46,6 +46,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Add Player:onInventoryUpdate(item, slot, equip) (#3944) [Feb 17, 2022]: https://github.com/otland/forgottenserver/commit/15d3e5478d5b27d70e0609c5b0d11ee2b2d6a1cf
 - Fix compiler error on MSVC with c++latest (#3954) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/2e30d7da8747f0732f7ac80887e3d359b22e612b
 - EventCallback Lib a more modern and easy way to configure (#3834) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/27e2b46338c21a534a1b4e2977aa0d4004f7f9b0
+- Slightly update to event_callbacks.lua style (#3960) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/7f8d0d421df83ec23147a56114f29ea4c3c78938
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
