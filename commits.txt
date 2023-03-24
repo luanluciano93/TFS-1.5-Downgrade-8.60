@@ -40,6 +40,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Update default_onDropLoot.lua (#3941) [Feb 15, 2022]: https://github.com/otland/forgottenserver/commit/b61accf1293f550025f72a61c15002a6b68adc80
 - Fix magic level update after wearing items (#3945) [Feb 15, 2022]: https://github.com/otland/forgottenserver/commit/7753f4112002ec0fa6c53d0fd77f0224706b0118
 - Fix Creature::blockHit (#3948) [Feb 16, 2022]: https://github.com/otland/forgottenserver/commit/c82d3329c73e51e1ab8d45a97276eeacc4b38a11
+- rsa: tolerate whitespaces better (#3940) [Feb 16, 2022]: https://github.com/otland/forgottenserver/commit/474b959f8bae491afe10d2e7fa4919722e594ce3
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
