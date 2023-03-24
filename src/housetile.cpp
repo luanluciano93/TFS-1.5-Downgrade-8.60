@@ -97,7 +97,6 @@ ReturnValue HouseTile::queryAdd(int32_t index, const Thing& thing, uint32_t coun
 				return RETURNVALUE_PLAYERISNOTINVITED;
 			}
 		}
-		}
 	}
 	return Tile::queryAdd(index, thing, count, flags, actor);
 }
