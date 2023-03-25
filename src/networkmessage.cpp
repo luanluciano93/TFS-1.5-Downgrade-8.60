@@ -23,6 +23,7 @@
 
 #include "container.h"
 #include "creature.h"
+// #include "podium.h" // disabled on downgrade
 
 std::string NetworkMessage::getString(uint16_t stringLen/* = 0*/)
 {
@@ -106,6 +107,15 @@ void NetworkMessage::addItem(uint16_t id, uint8_t count)
 	} else if (it.isSplash() || it.isFluidContainer()) {
 		addByte(fluidMap[count & 7]);
 	}
+
+	/* disabled on downgrade
+	if (it.isPodium()) {
+		add<uint16_t>(0); //looktype
+		add<uint16_t>(0); //lookmount
+		addByte(2); //direction
+		addByte(0x01); //is visible (bool)
+	}
+	*/
 }
 
 void NetworkMessage::addItem(const Item* item)
@@ -119,6 +129,45 @@ void NetworkMessage::addItem(const Item* item)
 	} else if (it.isSplash() || it.isFluidContainer()) {
 		addByte(fluidMap[item->getFluidType() & 7]);
 	}
+
+	/* disabled on downgrade
+	// display outfit on the podium
+	if (it.isPodium()) {
+		const Podium* podium = item->getPodium();
+		const Outfit_t &outfit = podium->getOutfit();
+
+		//add outfit
+		if (podium->hasFlag(PODIUM_SHOW_OUTFIT)) {
+			add<uint16_t>(outfit.lookType);
+			if (outfit.lookType != 0) {
+				addByte(outfit.lookHead);
+				addByte(outfit.lookBody);
+				addByte(outfit.lookLegs);
+				addByte(outfit.lookFeet);
+				addByte(outfit.lookAddons);
+			}
+		} else {
+			add<uint16_t>(0);
+		}
+
+		//add mount
+		if (podium->hasFlag(PODIUM_SHOW_MOUNT)) {
+			add<uint16_t>(outfit.lookMount);
+			if (outfit.lookMount != 0) {
+				addByte(outfit.lookMountHead);
+				addByte(outfit.lookMountBody);
+				addByte(outfit.lookMountLegs);
+				addByte(outfit.lookMountFeet);
+			}
+		} else {
+			add<uint16_t>(0);
+		}
+
+		addByte(podium->getDirection());
+		addByte(podium->hasFlag(PODIUM_SHOW_PLATFORM) ? 0x01 : 0x00);
+		return;
+	}
+	*/
 }
 
 void NetworkMessage::addItemId(uint16_t itemId)

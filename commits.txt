@@ -48,6 +48,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - EventCallback Lib a more modern and easy way to configure (#3834) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/27e2b46338c21a534a1b4e2977aa0d4004f7f9b0
 - Slightly update to event_callbacks.lua style (#3960) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/7f8d0d421df83ec23147a56114f29ea4c3c78938
 - Fix summon memory leak (#3736) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/f4205e367c6e82e64a7aa6648426ee4c90930981
+- Added Podium feature (#3858) [Feb 18, 2022]: https://github.com/otland/forgottenserver/commit/e20bc717ce2b1ec78d914f7860926a2cd82cfeb6
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4

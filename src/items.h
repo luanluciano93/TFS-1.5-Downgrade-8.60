@@ -54,6 +54,7 @@ enum ItemTypes_t {
 	ITEM_TYPE_BED,
 	ITEM_TYPE_KEY,
 	ITEM_TYPE_RUNE,
+	// ITEM_TYPE_PODIUM, //
 	ITEM_TYPE_LAST
 };
 
@@ -312,6 +313,11 @@ class ItemType
 		bool isRune() const {
 			return (type == ITEM_TYPE_RUNE);
 		}
+		/* disabled on downgrade
+		bool isPodium() const {
+			return (type == ITEM_TYPE_PODIUM);
+		}
+		*/
 		bool isPickupable() const {
 			return pickupable;
 		}

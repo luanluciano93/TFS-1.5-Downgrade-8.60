@@ -393,6 +393,10 @@ class Game
 		void playerRequestRemoveVip(uint32_t playerId, uint32_t guid);
 		void playerTurn(uint32_t playerId, Direction dir);
 		void playerRequestOutfit(uint32_t playerId);
+		/* disabled on downgrade
+		void playerRequestEditPodium(uint32_t playerId, const Position& position, uint8_t stackPos, const uint16_t spriteId);
+		void playerEditPodium(uint32_t playerId, Outfit_t outfit, const Position& position, uint8_t stackPos, const uint16_t spriteId, bool podiumVisible, Direction direction);
+		*/
 		void playerShowQuestLog(uint32_t playerId);
 		void playerShowQuestLine(uint32_t playerId, uint16_t questId);
 		// void playerResetQuestTracker(uint32_t playerId, const std::vector<uint16_t>& missionIds); // disabled on downgrade
@@ -489,6 +493,8 @@ class Game
 		BedItem* getBedBySleeper(uint32_t guid) const;
 		void setBedSleeper(BedItem* bed, uint32_t guid);
 		void removeBedSleeper(uint32_t guid);
+
+		// void updatePodium(Item* item); // disabled on downgrade
 
 		Item* getUniqueItem(uint16_t uniqueId);
 		bool addUniqueItem(uint16_t uniqueId, Item* item);

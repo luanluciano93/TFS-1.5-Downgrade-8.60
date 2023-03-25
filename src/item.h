@@ -40,6 +40,7 @@ class Mailbox;
 class Door;
 class MagicField;
 class BedItem;
+// class Podium; // disabled on downgrade
 
 enum ITEMPROPERTY {
 	CONST_PROP_BLOCKSOLID = 0,
@@ -106,7 +107,7 @@ enum AttrTypes_t {
 	//ATTR_WRAPID = 36,
 	//ATTR_STOREITEM = 37,
 	ATTR_ATTACK_SPEED = 38,
-	// ATTR_PODIUMOUTFIT = 40, // mapeditor
+	// ATTR_PODIUMOUTFIT = 40, // disabled on downgrade
 	// ATTR_TIER = 41, // mapeditor
 	// ATTR_REFLECT = 42, // disabled on downgrade
 	// ATTR_BOOST = 43, // disabled on downgrade
@@ -616,6 +617,15 @@ class Item : virtual public Thing
 			return nullptr;
 		}
 
+		/* disabled on downgrade
+		virtual Podium* getPodium() {
+			return nullptr;
+		}
+		virtual const Podium* getPodium() const {
+			return nullptr;
+		}
+		*/
+
 		const std::string& getStrAttr(itemAttrTypes type) const {
 			if (!attributes) {
 				return ItemAttributes::emptyString;
@@ -959,6 +969,11 @@ class Item : virtual public Thing
 			const ItemType& it = items[id];
 			return it.rotatable && it.rotateTo;
 		}
+		/* disabled on downgrade
+		bool isPodium() const {
+			return items[id].isPodium();
+		}
+		*/
 		bool hasWalkStack() const {
 			return items[id].walkStack;
 		}

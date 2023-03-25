@@ -34,6 +34,7 @@
 #include "items.h"
 #include "monster.h"
 #include "movement.h"
+// #include "podium.h" // disabled on downgrade
 #include "scheduler.h"
 #include "server.h"
 #include "spells.h"
@@ -2255,6 +2256,7 @@ void Game::playerRotateItem(uint32_t playerId, const Position& pos, uint8_t stac
 	}
 
 	Item* item = thing->getItem();
+	// if (!item || item->getClientID() != spriteId || (!item->isRotatable() && !item->isPodium()) || item->hasAttribute(ITEM_ATTRIBUTE_UNIQUEID)) { // change on downgrade
 	if (!item || item->getClientID() != spriteId || !item->isRotatable() || item->hasAttribute(ITEM_ATTRIBUTE_UNIQUEID)) {
 		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
 		return;
@@ -2275,6 +2277,17 @@ void Game::playerRotateItem(uint32_t playerId, const Position& pos, uint8_t stac
 		return;
 	}
 
+	/* change on downgrade
+	if (Podium* podium = item->getPodium()) {
+		podium->setDirection(static_cast<Direction>((podium->getDirection() + 1) % 4));
+		updatePodium(podium);
+	} else {
+		uint16_t newId = Item::items[item->getID()].rotateTo;
+		if (newId != 0) {
+			transformItem(item, newId);
+		}
+	}
+	*/
 	uint16_t newId = Item::items[item->getID()].rotateTo;
 	if (newId != 0) {
 		transformItem(item, newId);
@@ -3197,6 +3210,78 @@ void Game::playerRequestOutfit(uint32_t playerId)
 
 	player->sendOutfitWindow();
 }
+
+/* disabled on downgrade
+void Game::playerRequestEditPodium(uint32_t playerId, const Position& position, uint8_t stackPos, const uint16_t spriteId)
+{
+	Player* player = getPlayerByID(playerId);
+	if (!player) {
+		return;
+	}
+
+	Thing* thing = internalGetThing(player, position, stackPos, 0, STACKPOS_TOPDOWN_ITEM);
+	if (!thing) {
+		return;
+	}
+
+	const ItemType& it = Item::items.getItemIdByClientId(spriteId);
+	if (it.id == 0) {
+		return;
+	}
+
+	Item* item = thing->getItem();
+	if (!item || item->getClientID() != spriteId || it.type != ITEM_TYPE_PODIUM) {
+		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
+		return;
+	}
+
+	// player has to walk to podium
+	// gm/god can edit instantly
+	if (!player->isAccessPlayer()) {
+		if (position.x != 0xFFFF && !Position::areInRange<1, 1, 0>(position, player->getPosition())) {
+			std::vector<Direction> listDir;
+			if (player->getPathTo(position, listDir, 0, 1, true, true)) {
+				g_dispatcher.addTask(createTask(std::bind(&Game::playerAutoWalk,
+					this, player->getID(), std::move(listDir))));
+
+				SchedulerTask* task = createSchedulerTask(400, std::bind(&Game::playerRequestEditPodium, this,
+					playerId, position, stackPos, spriteId));
+				player->setNextWalkActionTask(task);
+			} else {
+				player->sendCancelMessage(RETURNVALUE_THEREISNOWAY);
+			}
+			return;
+		}
+	}
+
+	g_events->eventPlayerOnPodiumRequest(player, item);
+}
+
+void Game::playerEditPodium(uint32_t playerId, Outfit_t outfit, const Position& position, uint8_t stackPos, const uint16_t spriteId, bool podiumVisible, Direction direction)
+{
+	Player* player = getPlayerByID(playerId);
+	if (!player) {
+		return;
+	}
+
+	Thing* thing = internalGetThing(player, position, stackPos, 0, STACKPOS_TOPDOWN_ITEM);
+	if (!thing) {
+		return;
+	}
+
+	Item* item = thing->getItem();
+	if (!item) {
+		return;
+	}
+
+	const ItemType& it = Item::items.getItemIdByClientId(spriteId);
+	if (it.id == 0) {
+		return;
+	}
+
+	g_events->eventPlayerOnPodiumEdit(player, item, outfit, podiumVisible, direction);
+}
+*/
 
 void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 {
@@ -4972,6 +5057,27 @@ void Game::removeBedSleeper(uint32_t guid)
 		bedSleepersMap.erase(it);
 	}
 }
+
+/* disabled on downgrade
+void Game::updatePodium(Item* item)
+{
+	if (!item->getPodium()) {
+		return;
+	}
+
+	Tile* tile = item->getTile();
+	if (!tile) {
+		return;
+	}
+
+	//send to clients
+	SpectatorVec spectators;
+	map.getSpectators(spectators, item->getPosition(), true, true);
+	for (Creature* spectator : spectators) {
+		spectator->getPlayer()->sendUpdateTileItem(tile, item->getPosition(), item);
+	}
+}
+*/
 
 Item* Game::getUniqueItem(uint16_t uniqueId)
 {

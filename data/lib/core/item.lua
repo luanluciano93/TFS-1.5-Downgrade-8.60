@@ -26,6 +26,12 @@ function Item.isTeleport(self)
 	return false
 end
 
+--[[ disabled on downgrade
+function Item.isPodium(self)
+	return false
+end
+]]--
+
 function Item.isTile(self)
 	return false
 end

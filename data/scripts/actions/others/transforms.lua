@@ -66,6 +66,7 @@ local transformItems = {
 	[12200] = 12201, [12201] = 12200, -- wall torch
 	[12208] = 12209, [12209] = 12208, -- wall lamp
 	[12210] = 12211, [12211] = 12210, -- wall lamp
+	-- [38629] = 38630, [38630] = 38629, -- toggle light on podium -- disabled on downgrade
 }
 
 local transformTo = Action()

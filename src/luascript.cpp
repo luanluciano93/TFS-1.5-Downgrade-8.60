@@ -34,6 +34,7 @@
 #include "teleport.h"
 #include "databasemanager.h"
 #include "bed.h"
+// #include "podium.h" // disabled on downgrade
 #include "monster.h"
 #include "scheduler.h"
 #include "databasetasks.h"
@@ -712,6 +713,10 @@ void LuaScriptInterface::setItemMetatable(lua_State* L, int32_t index, const Ite
 		luaL_getmetatable(L, "Container");
 	} else if (item->getTeleport()) {
 		luaL_getmetatable(L, "Teleport");
+	/* disabled on downgrade
+	} else if (item->getPodium()) {
+		luaL_getmetatable(L, "Podium");
+	*/
 	} else {
 		luaL_getmetatable(L, "Item");
 	}
@@ -862,6 +867,11 @@ Thing* LuaScriptInterface::getThing(lua_State* L, int32_t arg)
 			case LuaData_Teleport:
 				thing = getUserdata<Teleport>(L, arg);
 				break;
+			/* disabled on downgrade
+			case LuaData_Podium:
+				thing = getUserdata<Podium>(L, arg);
+				break;
+			*/
 			case LuaData_Player:
 				thing = getUserdata<Player>(L, arg);
 				break;
@@ -1524,6 +1534,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(ITEM_TYPE_BED)
 	registerEnum(ITEM_TYPE_KEY)
 	registerEnum(ITEM_TYPE_RUNE)
+	// registerEnum(ITEM_TYPE_PODIUM) // disabled on downgrade
 
 	registerEnum(ITEM_GROUP_GROUND)
 	registerEnum(ITEM_GROUP_CONTAINER)
@@ -1539,6 +1550,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(ITEM_GROUP_FLUID)
 	registerEnum(ITEM_GROUP_DOOR)
 	registerEnum(ITEM_GROUP_DEPRECATED)
+	// registerEnum(ITEM_GROUP_PODIUM) // disabled on downgrade
 
 	registerEnum(ITEM_BAG)
 	registerEnum(ITEM_BACKPACK)
@@ -1614,6 +1626,12 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(PlayerFlag_IsAlwaysPremium)
 	registerEnum(PlayerFlag_IgnoreYellCheck)
 	registerEnum(PlayerFlag_IgnoreSendPrivateCheck)
+
+	/* disabled on downgrade
+	registerEnum(PODIUM_SHOW_PLATFORM)
+	registerEnum(PODIUM_SHOW_OUTFIT)
+	registerEnum(PODIUM_SHOW_MOUNT)
+	*/
 
 	registerEnum(PLAYERSEX_FEMALE)
 	registerEnum(PLAYERSEX_MALE)
@@ -2044,6 +2062,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Game", "getNpcCount", LuaScriptInterface::luaGameGetNpcCount);
 	registerMethod("Game", "getMonsterTypes", LuaScriptInterface::luaGameGetMonsterTypes);
 	registerMethod("Game", "getCurrencyItems", LuaScriptInterface::luaGameGetCurrencyItems);
+	// registerMethod("Game", "getMountIdByLookType", LuaScriptInterface::luaGameGetMountIdByLookType); // disabled on downgrade
 
 	registerMethod("Game", "getTowns", LuaScriptInterface::luaGameGetTowns);
 	registerMethod("Game", "getHouses", LuaScriptInterface::luaGameGetHouses);
@@ -2259,6 +2278,19 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Teleport", "getDestination", LuaScriptInterface::luaTeleportGetDestination);
 	registerMethod("Teleport", "setDestination", LuaScriptInterface::luaTeleportSetDestination);
 
+	/* disabled on downgrade
+	// Podium
+	registerClass("Podium", "Item", LuaScriptInterface::luaPodiumCreate);
+	registerMetaMethod("Podium", "__eq", LuaScriptInterface::luaUserdataCompare);
+
+	registerMethod("Podium", "getOutfit", LuaScriptInterface::luaPodiumGetOutfit);
+	registerMethod("Podium", "setOutfit", LuaScriptInterface::luaPodiumSetOutfit);
+	registerMethod("Podium", "hasFlag", LuaScriptInterface::luaPodiumHasFlag);
+	registerMethod("Podium", "setFlag", LuaScriptInterface::luaPodiumSetFlag);
+	registerMethod("Podium", "getDirection", LuaScriptInterface::luaPodiumGetDirection);
+	registerMethod("Podium", "setDirection", LuaScriptInterface::luaPodiumSetDirection);
+	*/
+
 	// Creature
 	registerClass("Creature", "", LuaScriptInterface::luaCreatureCreate);
 	registerMetaMethod("Creature", "__eq", LuaScriptInterface::luaUserdataCompare);
@@ -2459,6 +2491,8 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "hasOutfit", LuaScriptInterface::luaPlayerHasOutfit);
 	registerMethod("Player", "canWearOutfit", LuaScriptInterface::luaPlayerCanWearOutfit);
 	registerMethod("Player", "sendOutfitWindow", LuaScriptInterface::luaPlayerSendOutfitWindow);
+
+	// registerMethod("Player", "sendEditPodium", LuaScriptInterface::luaPlayerSendEditPodium); // disabled on downgrade
 
 	registerMethod("Player", "getPremiumEndsAt", LuaScriptInterface::luaPlayerGetPremiumEndsAt);
 	registerMethod("Player", "setPremiumEndsAt", LuaScriptInterface::luaPlayerSetPremiumEndsAt);
@@ -3137,6 +3171,10 @@ void LuaScriptInterface::registerClass(const std::string& className, const std::
 		lua_pushnumber(luaState, LuaData_Container);
 	} else if (className == "Teleport") {
 		lua_pushnumber(luaState, LuaData_Teleport);
+	/* disabled on downgrade
+	} else if (className == "Podium") {
+		lua_pushnumber(luaState, LuaData_Podium);
+	*/
 	} else if (className == "Player") {
 		lua_pushnumber(luaState, LuaData_Player);
 	} else if (className == "Monster") {
@@ -3690,6 +3728,7 @@ int LuaScriptInterface::luaAddEvent(lua_State* L)
 						case LuaData_Item:
 						case LuaData_Container:
 						case LuaData_Teleport: {
+						// case LuaData_Podium: { // disabled on downgrade
 							lua_getglobal(L, "Item");
 							lua_getfield(L, -1, "getUniqueId");
 							break;
@@ -4326,6 +4365,24 @@ int LuaScriptInterface::luaGameGetCurrencyItems(lua_State* L)
 	}
 	return 1;
 }
+
+/* disabled on downgrade
+int LuaScriptInterface::luaGameGetMountIdByLookType(lua_State* L)
+{
+	// Game.getMountIdByLookType(lookType)
+	Mount* mount = nullptr;
+	if (isNumber(L, 1)) {
+		mount = g_game.mounts.getMountByClientID(getNumber<uint16_t>(L, 1));
+	}
+
+	if (mount) {
+		lua_pushnumber(L, mount->id);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+*/
 
 int LuaScriptInterface::luaGameGetTowns(lua_State* L)
 {
@@ -7030,6 +7087,106 @@ int LuaScriptInterface::luaTeleportSetDestination(lua_State* L)
 	return 1;
 }
 
+/* disabled on downgrade
+// Podium
+int LuaScriptInterface::luaPodiumCreate(lua_State* L)
+{
+	// Podium(uid)
+	uint32_t id = getNumber<uint32_t>(L, 2);
+
+	Item* item = getScriptEnv()->getItemByUID(id);
+	if (item && item->getPodium()) {
+		pushUserdata(L, item);
+		setMetatable(L, -1, "Podium");
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPodiumGetOutfit(lua_State* L)
+{
+	// podium:getOutfit()
+	const Podium* podium = getUserdata<const Podium>(L, 1);
+	if (podium) {
+		pushOutfit(L, podium->getOutfit());
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPodiumSetOutfit(lua_State* L)
+{
+	// podium:setOutfit(outfit)
+	Podium* podium = getUserdata<Podium>(L, 1);
+	if (podium) {
+		podium->setOutfit(getOutfit(L, 2));
+		g_game.updatePodium(podium);
+		pushBoolean(L, true);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPodiumHasFlag(lua_State* L)
+{
+	// podium:hasFlag(flag)
+	Podium* podium = getUserdata<Podium>(L, 1);
+	if (podium) {
+		PodiumFlags flag = getNumber<PodiumFlags>(L, 2);
+		pushBoolean(L, podium->hasFlag(flag));
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPodiumSetFlag(lua_State* L)
+{
+	// podium:setFlag(flag, value)
+	uint8_t value = getBoolean(L, 3);
+	PodiumFlags flag = getNumber<PodiumFlags>(L, 2);
+	Podium* podium = getUserdata<Podium>(L, 1);
+
+	if (podium) {
+		podium->setFlagValue(flag, value);
+		g_game.updatePodium(podium);
+		pushBoolean(L, true);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPodiumGetDirection(lua_State* L)
+{
+	// podium:getDirection()
+	const Podium* podium = getUserdata<const Podium>(L, 1);
+	if (podium) {
+		lua_pushnumber(L, podium->getDirection());
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPodiumSetDirection(lua_State* L)
+{
+	// podium:setDirection(direction)
+	Podium* podium = getUserdata<Podium>(L, 1);
+	if (podium) {
+		podium->setDirection(getNumber<Direction>(L, 2));
+		g_game.updatePodium(podium);
+		pushBoolean(L, true);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+*/
+
 // Creature
 int LuaScriptInterface::luaCreatureCreate(lua_State* L)
 {
@@ -9477,6 +9634,20 @@ int LuaScriptInterface::luaPlayerSendOutfitWindow(lua_State* L)
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
 		player->sendOutfitWindow();
+		pushBoolean(L, true);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerSendEditPodium(lua_State* L)
+{
+	// player:sendEditPodium(item)
+	Player* player = getUserdata<Player>(L, 1);
+	Item* item = getUserdata<Item>(L, 2);
+	if (player && item) {
+		player->sendPodiumWindow(item);
 		pushBoolean(L, true);
 	} else {
 		lua_pushnil(L);
