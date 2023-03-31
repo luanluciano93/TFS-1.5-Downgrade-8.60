@@ -56,6 +56,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Add missing 'self' parameter to Player:onItemMoved (#3972) [Feb 22, 2022]: https://github.com/otland/forgottenserver/commit/32f4d4b4138a89116ea14a69a6cf4b04e599293b
 - Add player check to pitfall holes (#3968) [Feb 23, 2022]: https://github.com/otland/forgottenserver/commit/6c00ed7cf8611f05683bac33e0f866358d0447e4
 - Use modern bool comparator on lua (#3962) [Feb 24, 2022]: https://github.com/otland/forgottenserver/commit/d87a01521243a4e9a94f4320d58085b1edc1337f
+- Add possibility to set/get monster storages from Lua (#3973) [Mar 3, 2022]: https://github.com/otland/forgottenserver/commit/b9759d9a735f8bdf70b43867f6206f76804e3380
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
