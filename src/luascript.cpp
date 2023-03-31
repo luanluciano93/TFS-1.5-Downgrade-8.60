@@ -9625,6 +9625,7 @@ int LuaScriptInterface::luaPlayerSendOutfitWindow(lua_State* L)
 	return 1;
 }
 
+/*
 int LuaScriptInterface::luaPlayerSendEditPodium(lua_State* L)
 {
 	// player:sendEditPodium(item)
@@ -9638,6 +9639,7 @@ int LuaScriptInterface::luaPlayerSendEditPodium(lua_State* L)
 	}
 	return 1;
 }
+*/
 
 int LuaScriptInterface::luaPlayerGetPremiumEndsAt(lua_State* L)
 {
