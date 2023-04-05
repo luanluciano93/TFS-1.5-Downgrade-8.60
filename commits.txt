@@ -62,6 +62,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Replace LuaVariant with std::variant (#3981) [Mar 7, 2022]: https://github.com/otland/forgottenserver/commit/1cef0eaed2edd85b09ebaa264f017738a2f31a1b
 - Drop boost::filesystem in favor of std::filesystem (#3990) [Mar 7, 2022]: https://github.com/otland/forgottenserver/commit/4b800b20558f24344c5024fb3cb9a4974ebad90e
 - Fix misleading indentation and add brackets (#3992) [Mar 7, 2022]: https://github.com/otland/forgottenserver/commit/51c8017c1a1555992d67a4c1e40665e307fdb826
+- Normalize include guards to FS_<FILENAME>_H (#3993) [Mar 7, 2022]: https://github.com/otland/forgottenserver/commit/695477509ec0abc89eab1cd56016654ea979b8aa
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
