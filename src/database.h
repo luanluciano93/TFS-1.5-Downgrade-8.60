@@ -136,20 +136,14 @@ class DBResult
 			auto it = listNames.find(s);
 			if (it == listNames.end()) {
 				std::cout << "[Error - DBResult::getNumber] Column '" << s << "' doesn't exist in the result set" << std::endl;
-				return static_cast<T>(0);
+				return {};
 			}
 
-			if (row[it->second] == nullptr) {
-				return static_cast<T>(0);
+			if (!row[it->second]) {
+				return {};
 			}
 
-			T data;
-			try {
-				data = boost::lexical_cast<T>(row[it->second]);
-			} catch (boost::bad_lexical_cast&) {
-				data = 0;
-			}
-			return data;
+			return pugi::cast<T>(row[it->second]);
 		}
 
 		std::string getString(const std::string& s) const;

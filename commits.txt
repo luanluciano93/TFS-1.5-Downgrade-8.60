@@ -64,6 +64,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Fix misleading indentation and add brackets (#3992) [Mar 7, 2022]: https://github.com/otland/forgottenserver/commit/51c8017c1a1555992d67a4c1e40665e307fdb826
 - Normalize include guards to FS_<FILENAME>_H (#3993) [Mar 7, 2022]: https://github.com/otland/forgottenserver/commit/695477509ec0abc89eab1cd56016654ea979b8aa
 - Use single list as waiting queue (#3712) [Mar 9, 2022]: https://github.com/otland/forgottenserver/commit/1df709004c68e78e334c696ada1d14a7dd8590bb
+- Replace slower boost::lexical_cast with stdlib conversions (#3997) [Mar 9, 2022]: https://github.com/otland/forgottenserver/commit/3fb22fb9031840b2dcc33d640514327b340db0d0
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
