@@ -49,4 +49,4 @@ class IOLoginData
 		static bool saveItems(const Player* player, const ItemBlockList& itemList, DBInsert& query_insert, PropWriteStream& propWriteStream);
 };
 
-#endif / FS_IOLOGINDATA_H
+#endif // FS_IOLOGINDATA_H
