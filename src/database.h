@@ -4,7 +4,7 @@
 #ifndef FS_DATABASE_H
 #define FS_DATABASE_H
 
-#include <boost/lexical_cast.hpp>
+#include "pugicast.h"
 
 #include <mysql/mysql.h>
 
