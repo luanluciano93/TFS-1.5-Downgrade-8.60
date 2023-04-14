@@ -69,6 +69,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - feat: exp tracker (#3999) [Mar 10, 2022]: https://github.com/otland/forgottenserver/commit/bdf8fa112b2f1a720352af46658362922d0f9635
 - Removed unecessary config (#4003) [Mar 10, 2022]: https://github.com/otland/forgottenserver/commit/816951e5235bd06380d4ef5c27891b0636582bf8
 - fixed talkactions with separator not working (#4004) [Mar 10, 2022]: https://github.com/otland/forgottenserver/commit/cf28d1cfa1f56813ab35f7e6b7f11dc040fa7214
+- Fixed variable type in npc.cpp (#3996) [Mar 11, 2022]: https://github.com/otland/forgottenserver/commit/fbe85a1c9505fbe7ab26fc0dd985f2e1f8228547
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
