@@ -861,6 +861,15 @@ class Player final : public Creature, public Cylinder
 		}
 		void sendPing();
 		void sendStats();
+
+		/* disabled on downgrade
+		void sendExperienceTracker(int64_t rawExp, int64_t finalExp) const {
+			if (client) {
+				client->sendExperienceTracker(rawExp, finalExp);
+			}
+		}
+		*/
+
 		void sendSkills() const {
 			if (client) {
 				client->sendSkills();

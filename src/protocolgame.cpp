@@ -1247,6 +1247,17 @@ void ProtocolGame::sendStats()
 	writeToOutputBuffer(msg);
 }
 
+/* disabled on downgrade
+void ProtocolGame::sendExperienceTracker(int64_t rawExp, int64_t finalExp)
+{
+	NetworkMessage msg;
+	msg.addByte(0xAF);
+	msg.add<int64_t>(rawExp);
+	msg.add<int64_t>(finalExp);
+	writeToOutputBuffer(msg);
+}
+*/
+
 void ProtocolGame::sendTextMessage(const TextMessage& message)
 {
 	NetworkMessage msg;

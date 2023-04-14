@@ -66,6 +66,7 @@ Commits adicionados do TFS após o fork Nekiro:
 - Use single list as waiting queue (#3712) [Mar 9, 2022]: https://github.com/otland/forgottenserver/commit/1df709004c68e78e334c696ada1d14a7dd8590bb
 - Replace slower boost::lexical_cast with stdlib conversions (#3997) [Mar 9, 2022]: https://github.com/otland/forgottenserver/commit/3fb22fb9031840b2dcc33d640514327b340db0d0
 - Add additional range check when pushing creature (#3989) [Mar 10, 2022]: https://github.com/otland/forgottenserver/commit/904abe6908d2bb396c2793f4f2123760a7011b89
+- feat: exp tracker (#3999) [Mar 10, 2022]: https://github.com/otland/forgottenserver/commit/bdf8fa112b2f1a720352af46658362922d0f9635
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
