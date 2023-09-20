@@ -73,3 +73,4 @@ Commits adicionados do TFS após o fork Nekiro:
 
 Outros commits adicionados:
 - [luanluciano93] remove magic walls/wild growth [Mar 13, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/e5e3a236c8278b7de611584020801ecccc0a82e4
+- [luanluciano93] fix compile error fmt [Sep 8, 2023]: https://github.com/luanluciano93/TFS-1.5-Downgrade-8.60/commit/fe8078ae0b44475c21b0972b08cc9c1adfe7784a
